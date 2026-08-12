@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       release_tag:
-        description: GitHub release tag to publish, for example v0.260812.7
+        description: GitHub release tag to publish, for example v0.260812.8
         required: true
         type: string
 
@@ -59,7 +59,7 @@ jobs:
             [[ -s "${package}" ]]
             unzip -tq "${package}"
             manifest="$(unzip -p "${package}" extension.vsixmanifest)"
-            grep -Fq 'Id="code-translator"' <<<"${manifest}"
+            grep -Fq 'Id="k-lani-code-translator"' <<<"${manifest}"
             grep -Fq 'Publisher="k-lani"' <<<"${manifest}"
             grep -Fq "Version=\"${version}\"" <<<"${manifest}"
             grep -Fq "TargetPlatform=\"${target}\"" <<<"${manifest}"
@@ -68,7 +68,7 @@ jobs:
           [[ -s "${universal}" ]]
           unzip -tq "${universal}"
           universal_manifest="$(unzip -p "${universal}" extension.vsixmanifest)"
-          grep -Fq 'Id="code-translator"' <<<"${universal_manifest}"
+          grep -Fq 'Id="k-lani-code-translator"' <<<"${universal_manifest}"
           grep -Fq 'Publisher="k-lani"' <<<"${universal_manifest}"
           grep -Fq "Version=\"${version}\"" <<<"${universal_manifest}"
           if grep -Fq 'TargetPlatform=' <<<"${universal_manifest}"; then
