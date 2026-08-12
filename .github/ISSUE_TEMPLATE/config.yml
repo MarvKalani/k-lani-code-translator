@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Sicherheitsproblem vertraulich melden
+    url: https://github.com/MarvKalani/k-lani-code-translator/security/advisories/new
+    about: Bitte Sicherheitsprobleme nicht öffentlich melden.
+  - name: Projektwebsite
+    url: https://code-translator.k-lani.com
+    about: Produktinformationen und kommerzielle Lizenz.

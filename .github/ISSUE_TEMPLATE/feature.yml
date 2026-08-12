@@ -1,0 +1,18 @@
+name: Verbesserung
+description: Eine Sprache, Lesehilfe oder Bedienungsverbesserung vorschlagen
+title: "[Idee]: "
+labels:
+  - enhancement
+body:
+  - type: textarea
+    id: value
+    attributes:
+      label: Welchen Nutzen soll die Verbesserung bringen?
+      description: Beschreibe möglichst ein konkretes Lese- oder Lernproblem.
+    validations:
+      required: true
+  - type: textarea
+    id: example
+    attributes:
+      label: Beispiel
+      description: Ein kleiner anonymisierter Ausschnitt oder Ablauf hilft bei der Einordnung.

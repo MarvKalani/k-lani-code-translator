@@ -1,0 +1,45 @@
+name: Technisches Problem
+description: Installation, Oberfläche, Synchronisierung oder Absturz melden
+title: "[Fehler]: "
+labels:
+  - bug
+body:
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      placeholder: z. B. 0.260812.2
+    validations:
+      required: true
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Plattform
+      options:
+        - Windows x64
+        - Linux x64
+        - Linux ARM64
+        - macOS Intel
+        - macOS Apple Silicon
+        - Andere
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Schritte zur Reproduktion
+      placeholder: Was hast du geöffnet, gewählt und anschließend beobachtet?
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Erwartetes Verhalten
+    validations:
+      required: true
+  - type: textarea
+    id: output
+    attributes:
+      label: Relevante Ausgabe
+      description: Zugangsdaten und vertrauliche Inhalte bitte vorher entfernen.
+      render: text

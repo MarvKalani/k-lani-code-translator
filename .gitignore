@@ -1,0 +1,12 @@
+# Installierbare Pakete werden ausschließlich als GitHub-Release-Anhänge
+# veröffentlicht und nicht in den Dokumentationsbranch eingecheckt.
+*.vsix
+*.zip
+SHA256SUMS
+
+# Keine Entwicklungs- oder Buildverzeichnisse in diesem Distributionsrepo.
+target/
+src/
+Cargo.toml
+Cargo.lock
+node_modules/

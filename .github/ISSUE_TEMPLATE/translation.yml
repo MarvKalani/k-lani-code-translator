@@ -1,0 +1,46 @@
+name: Übersetzungsproblem
+description: Eine unklare, unvollständige oder überraschende Leseausgabe melden
+title: "[Übersetzung]: "
+labels:
+  - translation
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Danke, dass du die Lesehilfe verbesserst. Nutze nach Möglichkeit **Editierbaren Problembericht erstellen** in der Erweiterung und entferne vorher vertrauliche Inhalte.
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      placeholder: z. B. 0.260812.2
+    validations:
+      required: true
+  - type: input
+    id: direction
+    attributes:
+      label: Sprachrichtung
+      placeholder: z. B. C# → Python oder Rust → Deutsch
+    validations:
+      required: true
+  - type: textarea
+    id: report
+    attributes:
+      label: Bearbeiteter Problembericht oder minimales Beispiel
+      description: Nur den kleinsten notwendigen und zuvor geprüften Ausschnitt einfügen.
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Erwartete Leseausgabe
+      description: Wie wäre die Stelle für dich verständlich und fachlich näher am Original?
+    validations:
+      required: true
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Datenschutzprüfung
+      options:
+        - label: Ich habe Zugangsdaten, private Schlüssel, personenbezogene Daten und vertrauliche Inhalte entfernt.
+          required: true
