@@ -10,7 +10,7 @@
 |                                                             |
 |                C O D E   T R A N S L A T O R                |
 |                                                             |
-|   RUST.SOURCE >>> C# + ENGLISH >>> "NOW I GET IT" [READY]   |
+|   UNKNOWN LANGUAGE >>> KNOWN LANGUAGE >>> "NOW I GET IT"    |
 +-------------------------------------------------------------+
 ```
 
