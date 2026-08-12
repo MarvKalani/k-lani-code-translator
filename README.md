@@ -52,11 +52,16 @@ Der Marketplace-Eintrag wird vorbereitet. Bis dahin werden geprüfte Pakete
 unter **Releases** angeboten. Lade dort die VSIX-Datei für dein System und
 wähle in VS Code unter **Extensions → … → Install from VSIX…** die Datei aus.
 
-Geplante Desktop-Pakete:
+[Alle Dateien und Prüfsummen des aktuellen Alpha-Releases](https://github.com/MarvKalani/k-lani-code-translator/releases/tag/v0.260812.2)
 
-- Windows x64
-- Linux x64 und ARM64
-- macOS Intel und Apple Silicon
+Direkte Downloads:
+
+- [Linux x64](https://github.com/MarvKalani/k-lani-code-translator/releases/download/v0.260812.2/k-lani-code-translator-linux-x64.vsix)
+- [macOS Apple Silicon](https://github.com/MarvKalani/k-lani-code-translator/releases/download/v0.260812.2/k-lani-code-translator-darwin-arm64.vsix)
+- [macOS Intel](https://github.com/MarvKalani/k-lani-code-translator/releases/download/v0.260812.2/k-lani-code-translator-darwin-x64.vsix)
+
+Windows x64 und Linux ARM64 werden als eigene, eindeutig gekennzeichnete
+Pakete ergänzt.
 
 ## Lokal und privat
 
