@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       release_tag:
-        description: GitHub release tag to publish, for example v0.260812.4
+        description: GitHub release tag to publish, for example v0.260812.7
         required: true
         type: string
 
@@ -50,8 +50,8 @@ jobs:
           version="${RELEASE_TAG#v}"
           targets=(darwin-arm64 darwin-x64 linux-arm64 linux-x64 win32-x64)
           mapfile -t found < <(find packages -maxdepth 1 -type f -name '*.vsix' -printf '%f\n' | sort)
-          if [[ "${#found[@]}" -ne "${#targets[@]}" ]]; then
-            printf 'Expected five VSIX files, found %s: %s\n' "${#found[@]}" "${found[*]:-none}" >&2
+          if [[ "${#found[@]}" -ne 6 ]]; then
+            printf 'Expected five platform VSIX files and one universal VSIX, found %s: %s\n' "${#found[@]}" "${found[*]:-none}" >&2
             exit 1
           fi
           for target in "${targets[@]}"; do
@@ -64,6 +64,17 @@ jobs:
             grep -Fq "Version=\"${version}\"" <<<"${manifest}"
             grep -Fq "TargetPlatform=\"${target}\"" <<<"${manifest}"
           done
+          universal="packages/k-lani-code-translator-universal.vsix"
+          [[ -s "${universal}" ]]
+          unzip -tq "${universal}"
+          universal_manifest="$(unzip -p "${universal}" extension.vsixmanifest)"
+          grep -Fq 'Id="code-translator"' <<<"${universal_manifest}"
+          grep -Fq 'Publisher="k-lani"' <<<"${universal_manifest}"
+          grep -Fq "Version=\"${version}\"" <<<"${universal_manifest}"
+          if grep -Fq 'TargetPlatform=' <<<"${universal_manifest}"; then
+            printf 'Universal VSIX unexpectedly declares a target platform.\n' >&2
+            exit 1
+          fi
 
       - name: Publish to Visual Studio Marketplace
         env:
