@@ -1,0 +1,85 @@
+name: Publish Marketplace release
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_tag:
+        description: GitHub release tag to publish, for example v0.260812.4
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: marketplace-${{ inputs.release_tag }}
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    name: Publish five platform packages
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20.20.2"
+
+      - name: Download VSIX release assets
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ inputs.release_tag }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ ! "${RELEASE_TAG}" =~ ^v0\.[0-9]{6}\.(0|[1-9][0-9]*)$ ]]; then
+            printf 'Unexpected release tag: %s\n' "${RELEASE_TAG}" >&2
+            exit 1
+          fi
+          mkdir -p packages
+          gh release download "${RELEASE_TAG}" \
+            --repo "${GITHUB_REPOSITORY}" \
+            --pattern '*.vsix' \
+            --dir packages
+
+      - name: Verify package set and manifests
+        env:
+          RELEASE_TAG: ${{ inputs.release_tag }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          version="${RELEASE_TAG#v}"
+          targets=(darwin-arm64 darwin-x64 linux-arm64 linux-x64 win32-x64)
+          mapfile -t found < <(find packages -maxdepth 1 -type f -name '*.vsix' -printf '%f\n' | sort)
+          if [[ "${#found[@]}" -ne "${#targets[@]}" ]]; then
+            printf 'Expected five VSIX files, found %s: %s\n' "${#found[@]}" "${found[*]:-none}" >&2
+            exit 1
+          fi
+          for target in "${targets[@]}"; do
+            package="packages/k-lani-code-translator-${target}.vsix"
+            [[ -s "${package}" ]]
+            unzip -tq "${package}"
+            manifest="$(unzip -p "${package}" extension.vsixmanifest)"
+            grep -Fq 'Id="k-lani-code-translator"' <<<"${manifest}"
+            grep -Fq 'Publisher="marvin-kalani"' <<<"${manifest}"
+            grep -Fq "Version=\"${version}\"" <<<"${manifest}"
+            grep -Fq "TargetPlatform=\"${target}\"" <<<"${manifest}"
+          done
+
+      - name: Publish to Visual Studio Marketplace
+        env:
+          VSCE_PAT: ${{ secrets.VSCE_PAT }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ -z "${VSCE_PAT:-}" ]]; then
+            printf 'Repository secret VSCE_PAT is not configured.\n' >&2
+            exit 1
+          fi
+          npx --yes @vscode/vsce@3.9.2 publish \
+            --skip-duplicate \
+            --packagePath \
+            packages/k-lani-code-translator-darwin-arm64.vsix \
+            packages/k-lani-code-translator-darwin-x64.vsix \
+            packages/k-lani-code-translator-linux-arm64.vsix \
+            packages/k-lani-code-translator-linux-x64.vsix \
+            packages/k-lani-code-translator-win32-x64.vsix
