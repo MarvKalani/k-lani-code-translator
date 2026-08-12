@@ -59,8 +59,8 @@ jobs:
             [[ -s "${package}" ]]
             unzip -tq "${package}"
             manifest="$(unzip -p "${package}" extension.vsixmanifest)"
-            grep -Fq 'Id="k-lani-code-translator"' <<<"${manifest}"
-            grep -Fq 'Publisher="marvin-kalani"' <<<"${manifest}"
+            grep -Fq 'Id="code-translator"' <<<"${manifest}"
+            grep -Fq 'Publisher="k-lani"' <<<"${manifest}"
             grep -Fq "Version=\"${version}\"" <<<"${manifest}"
             grep -Fq "TargetPlatform=\"${target}\"" <<<"${manifest}"
           done
