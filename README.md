@@ -23,16 +23,25 @@ Erklärung.
 > enthält keine Garantie auf Kompilierbarkeit oder identisches
 > Laufzeitverhalten.
 
-## KI schreibt den Code. Du behältst die Urteilskraft.
+## Wo vertraute Syntax Zeit spart
 
-Eine KI kann Rust erzeugen, auch wenn C# deine vertraute Hauptsprache ist. Öffne
-den erzeugten Rust-Code daneben als synchronisierte C#-Lesehilfe, nutze deine
-vorhandene Erfahrung für das Review und gib der KI anschließend präzisere
-Korrekturen vor.
+- **Legacy-Systeme warten:** geerbten VB.NET-, C-, C++- oder anderen Code in
+  einer Sprache lesen, die das heutige Team kennt.
+- **Produktionsprobleme lösen:** Bedingungen, Datenänderungen und Rückgabepfade
+  eines unbekannten Dienstes schneller nachvollziehen.
+- **Verlorenes Wissen erschließen:** über Jahre gewachsene Geschäftslogik nach
+  einem Entwickler-, Dienstleister- oder Eigentümerwechsel zugänglich machen.
+- **Sprachübergreifend reviewen:** vorhandene Entwicklungserfahrung in einem
+  polyglotten System einsetzen, ohne vorher jede Syntax zu beherrschen.
+- **Migrationen vorbereiten:** kritische Module verstehen, bevor eine Anwendung
+  umgeschrieben, ersetzt oder stillgelegt wird.
+- **KI-generierten Code prüfen:** KI kann Code erzeugen. Die sichtbare Logik
+  lässt sich dennoch in vertrauter Syntax beurteilen.
 
-Die Lesehilfe macht aus unbekanntem Code nicht automatisch korrekten Code und
-ersetzt keine Sprachkenntnis. Sie hilft dabei, mehr von der sichtbaren Logik zu
-verstehen und die menschliche Beurteilung im KI-Arbeitsablauf zu behalten.
+Die Lesehilfe automatisiert keine Migration, beweist keine Korrektheit und
+ersetzt keine Kenntnisse der Quellsprache. Sie senkt die Syntaxbarriere, damit
+erfahrene Entwickler mehr von der sichtbaren Logik verstehen und fundiertere
+Entscheidungen treffen können.
 
 ## Unterstützte Sprachen
 
