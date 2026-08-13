@@ -80,15 +80,15 @@ Alternativ werden geprüfte plattformspezifische VSIX-Pakete unter
 VS Code unter **Extensions → … → Install from VSIX…** die Datei aus.
 
 <!-- k-lani-downloads:start -->
-[Alle Dateien und Prüfsummen des aktuellen Alpha-Releases](https://github.com/MarvKalani/k-lani-code-translator/releases/tag/v0.260813.4)
+[Alle Dateien und Prüfsummen des aktuellen Alpha-Releases](https://github.com/MarvKalani/k-lani-code-translator/releases/tag/v0.260813.5)
 
 Direkte Downloads:
 
-- [Linux x64](https://github.com/MarvKalani/k-lani-code-translator/releases/download/v0.260813.4/k-lani-code-translator-linux-x64.vsix)
-- [Linux ARM64](https://github.com/MarvKalani/k-lani-code-translator/releases/download/v0.260813.4/k-lani-code-translator-linux-arm64.vsix)
-- [Windows x64](https://github.com/MarvKalani/k-lani-code-translator/releases/download/v0.260813.4/k-lani-code-translator-win32-x64.vsix)
-- [macOS Apple Silicon](https://github.com/MarvKalani/k-lani-code-translator/releases/download/v0.260813.4/k-lani-code-translator-darwin-arm64.vsix)
-- [macOS Intel](https://github.com/MarvKalani/k-lani-code-translator/releases/download/v0.260813.4/k-lani-code-translator-darwin-x64.vsix)
+- [Linux x64](https://github.com/MarvKalani/k-lani-code-translator/releases/download/v0.260813.5/k-lani-code-translator-linux-x64.vsix)
+- [Linux ARM64](https://github.com/MarvKalani/k-lani-code-translator/releases/download/v0.260813.5/k-lani-code-translator-linux-arm64.vsix)
+- [Windows x64](https://github.com/MarvKalani/k-lani-code-translator/releases/download/v0.260813.5/k-lani-code-translator-win32-x64.vsix)
+- [macOS Apple Silicon](https://github.com/MarvKalani/k-lani-code-translator/releases/download/v0.260813.5/k-lani-code-translator-darwin-arm64.vsix)
+- [macOS Intel](https://github.com/MarvKalani/k-lani-code-translator/releases/download/v0.260813.5/k-lani-code-translator-darwin-x64.vsix)
 <!-- k-lani-downloads:end -->
 
 ## Lokal und privat
