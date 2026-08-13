@@ -23,6 +23,17 @@ Erklärung.
 > enthält keine Garantie auf Kompilierbarkeit oder identisches
 > Laufzeitverhalten.
 
+## KI schreibt den Code. Du behältst die Urteilskraft.
+
+Eine KI kann Rust erzeugen, auch wenn C# deine vertraute Hauptsprache ist. Öffne
+den erzeugten Rust-Code daneben als synchronisierte C#-Lesehilfe, nutze deine
+vorhandene Erfahrung für das Review und gib der KI anschließend präzisere
+Korrekturen vor.
+
+Die Lesehilfe macht aus unbekanntem Code nicht automatisch korrekten Code und
+ersetzt keine Sprachkenntnis. Sie hilft dabei, mehr von der sichtbaren Logik zu
+verstehen und die menschliche Beurteilung im KI-Arbeitsablauf zu behalten.
+
 ## Unterstützte Sprachen
 
 Python · TypeScript · C# · Java · C++ · C · PHP · Go · Rust · Kotlin · Ruby ·
@@ -48,9 +59,11 @@ anstatt eine sichere Entsprechung vorzutäuschen.
 
 ## Installation
 
-Der Marketplace-Eintrag wird vorbereitet. Bis dahin werden geprüfte Pakete
-unter **Releases** angeboten. Lade dort die VSIX-Datei für dein System und
-wähle in VS Code unter **Extensions → … → Install from VSIX…** die Datei aus.
+[Im Visual Studio Marketplace installieren](https://marketplace.visualstudio.com/items?itemName=k-lani.k-lani-code-translator)
+
+Alternativ werden geprüfte plattformspezifische VSIX-Pakete unter
+**GitHub Releases** angeboten. Lade dort die Datei für dein System und wähle in
+VS Code unter **Extensions → … → Install from VSIX…** die Datei aus.
 
 <!-- k-lani-downloads:start -->
 [Alle Dateien und Prüfsummen des aktuellen Alpha-Releases](https://github.com/MarvKalani/k-lani-code-translator/releases/tag/v0.260813.1)
