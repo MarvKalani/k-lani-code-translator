@@ -19,6 +19,11 @@ k-lani-code-translator öffnet eine oder mehrere synchronisierte Lesehilfen in
 anderen Programmiersprachen oder als deutsche beziehungsweise englische
 Erklärung.
 
+[Ohne Installation im Browser ausprobieren](https://code-translator.k-lani.com/#demo):
+Quelltext links live bearbeiten und die angepasste Lesehilfe rechts direkt
+sehen. Die WebAssembly-Demo läuft lokal im Browser-Tab und lädt den
+eingegebenen Code nicht hoch.
+
 > Die Ausgabe ist eine Lesehilfe. Sie ist keine automatische Portierung und
 > enthält keine Garantie auf Kompilierbarkeit oder identisches
 > Laufzeitverhalten.
